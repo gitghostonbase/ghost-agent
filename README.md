@@ -78,16 +78,16 @@ This creates `gitghost-mcp-0.1.0.tgz`, the same package shape npm will publish.
 2. Install the tarball into an isolated npm prefix:
 
 ```powershell
-$prefix = "C:\Users\aXL\AppData\Local\Temp\opencode\gitghost-mcp-prefix"
+$prefix = "<temp-prefix>"
 if (Test-Path -LiteralPath $prefix) { Remove-Item -LiteralPath $prefix -Recurse -Force }
 New-Item -ItemType Directory -Path $prefix | Out-Null
-npm install --prefix $prefix "C:\path\to\ghost-agent\gitghost-mcp-0.1.0.tgz"
+npm install --prefix $prefix "<path-to-ghost-agent-tgz>"
 ```
 
 3. Create a temp git repo:
 
 ```powershell
-$root = "C:\Users\aXL\AppData\Local\Temp\opencode\gitghost-mcp-dogfood"
+$root = "<temp-repo>"
 if (Test-Path -LiteralPath $root) { Remove-Item -LiteralPath $root -Recurse -Force }
 New-Item -ItemType Directory -Path $root | Out-Null
 git init $root
@@ -99,7 +99,7 @@ Set-Location -LiteralPath $root
 4. Call the installed package binary with the official Inspector CLI:
 
 ```powershell
-$cmd = "C:\Users\aXL\AppData\Local\Temp\opencode\gitghost-mcp-prefix\node_modules\.bin\gitghost-mcp.cmd"
+$cmd = "<temp-prefix>\node_modules\.bin\gitghost-mcp.cmd"
 npx -y @modelcontextprotocol/inspector --cli $cmd --method tools/list
 npx -y @modelcontextprotocol/inspector --cli $cmd --method tools/call --tool-name gitghost_init --tool-arg ringName=dogfood
 npx -y @modelcontextprotocol/inspector --cli $cmd --method tools/call --tool-name gitghost_ring_add_self
