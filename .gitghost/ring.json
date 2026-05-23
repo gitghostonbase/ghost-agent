@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "name": "ghost-agent",
+  "context": "a755208e893b39672e1b927a8a33ca3cefdf283c0a90e5af8e43e7bdbdd720cc",
+  "members": [
+    {
+      "github": "self",
+      "publicKey": "03fafd9b8222cad9f9b97ebe7920e113f3549bb7f2a4dde67ac2311b933a24f612",
+      "source": "local",
+      "fetchedAt": 1779554901990
+    },
+    {
+      "github": "torvalds",
+      "publicKey": "026a938ec3615632b5fa04cab66fd3ac044a4f1095244e24c22900c2394247c469",
+      "source": "github",
+      "fetchedAt": 1779554902503
+    }
+  ],
+  "createdAt": 1779554901831
+}

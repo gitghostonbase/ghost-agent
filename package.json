@@ -1,0 +1,58 @@
+{
+  "name": "@gitghost/mcp",
+  "version": "0.1.0",
+  "description": "MCP server for anonymous gitghost commit signing and verification.",
+  "type": "module",
+  "bin": {
+    "gitghost-mcp": "dist/src/index.js"
+  },
+  "main": "./dist/src/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc && node scripts/flatten-dist.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "smoke:stdio": "tsx test/stdio-smoke.ts",
+    "dev": "tsx src/index.ts",
+    "prepublishOnly": "npm run typecheck && npm run test && npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "gitghost",
+    "git",
+    "ring-signature",
+    "anonymous-commits",
+    "lsag"
+  ],
+  "author": "gitghost",
+  "license": "MIT",
+  "homepage": "https://gitghost.org",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitghostonbase/ghost-agent.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.4",
+    "@noble/curves": "^1.6.0",
+    "@noble/hashes": "^1.5.0",
+    "simple-git": "^3.27.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.9"
+  }
+}

@@ -1,0 +1,8 @@
+﻿node_modules/
+dist/
+dist-build/
+*.tgz
+.env
+.DS_Store
+.gitghost/identity.json
+.gitghost/.identity-perm-warned
